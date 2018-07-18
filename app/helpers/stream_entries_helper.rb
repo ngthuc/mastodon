@@ -12,6 +12,40 @@ module StreamEntriesHelper
     end
   end
 
+  def account_action_button(account)
+    if user_signed_in?
+      if account.id == current_user.account_id
+        link_to settings_profile_url, class: 'button logo-button', data: { method: :post } do
+          safe_join([
+            render(file: Rails.root.join('app', 'javascript', 'images', 'logo.svg')),
+            t('settings.edit_profile')
+          ])
+        end
+      elsif current_account.following?(account) || current_account.requested?(account)
+        link_to account_unfollow_path(account), class: 'button logo-button', data: { method: :post } do
+          safe_join([
+            render(file: Rails.root.join('app', 'javascript', 'images', 'logo.svg')),
+            t('accounts.unfollow')
+          ])
+        end
+      else
+        link_to account_follow_path(account), class: 'button logo-button', data: { method: :post } do
+          safe_join([
+            render(file: Rails.root.join('app', 'javascript', 'images', 'logo.svg')),
+            t('accounts.follow')
+          ])
+        end
+      end
+    else
+      link_to account_remote_follow_path(account), class: 'button logo-button', target: '_new' do
+        safe_join([
+          render(file: Rails.root.join('app', 'javascript', 'images', 'logo.svg')),
+          t('accounts.follow')
+        ])
+      end
+    end
+  end
+
   def account_description(account)
     prepend_str = [
       [

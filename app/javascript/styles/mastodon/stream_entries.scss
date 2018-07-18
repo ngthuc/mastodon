@@ -1,6 +1,7 @@
 .activity-stream {
   clear: both;
   box-shadow: 0 0 15px rgba($base-shadow-color, 0.2);
+  margin-bottom: 10px;
 
   div[data-component] {
     width: 100%;
@@ -75,9 +76,9 @@
   }
 
   .status.light {
-    padding: 14px 14px 14px (48px + 14px * 2);
+    padding: 15px 15px 15px (48px + 15px * 2);
     position: relative;
-    min-height: 48px;
+    min-height: 48px + 2px;
     cursor: default;
 
     .status__header {
@@ -100,10 +101,15 @@
       color: $inverted-text-color;
     }
 
+    .media-gallery,
+    .status__action-bar {
+      margin-top: 10px;
+    }
+
     .status__avatar {
       position: absolute;
-      left: 14px;
-      top: 14px;
+      left: 15px;
+      top: 17px;
       width: 48px;
       height: 48px;
 
@@ -143,6 +149,7 @@
     }
 
     .status__content {
+      padding-top: 5px;
       color: $inverted-text-color;
 
       a {
@@ -326,11 +333,15 @@
       margin: 0 5px 15px 0;
     }
 
-    .button.button-secondary.logo-button {
+    .button.logo-button {
       flex: 0 auto;
       font-size: 14px;
       background: $ui-highlight-color;
       color: $primary-text-color;
+      text-transform: none;
+      line-height: 36px;
+      height: auto;
+      padding: 3px 15px;
       border: 0;
 
       svg {
