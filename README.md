@@ -15,7 +15,7 @@ Click on the screenshot below to watch a demo of the UI:
 
 [youtube_demo]: https://www.youtube.com/watch?v=IPSbNdBmWKE
 
-**Ruby on Rails** is used for the back-end, while **React.js*** and Redux are used for the dynamic front-end. A static front-end for public resources (profiles and statuses) is also provided.
+**Ruby on Rails** is used for the back-end, while **React.js** and Redux are used for the dynamic front-end. A static front-end for public resources (profiles and statuses) is also provided.
 
 If you would like, you can [support the development of this project on Patreon][patreon] or [Liberapay][liberapay].
 
